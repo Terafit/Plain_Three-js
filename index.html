@@ -30,7 +30,8 @@
 
     <div id="scene"></div>
 
-    <script src="three/build/three.js"></script>
+    <script src="three.js"></script>
+    <script src="OrbitControls.js"></script>
     <script src="GLTFLoader.js"></script>
     <script>
 
@@ -87,9 +88,10 @@
             initWorld()
 
             function animate() {
+                renderer.render(scene, camera);
                 requestAnimationFrame(animate);
                 house.scale.set(30, 30, 30);
-                renderer.render(scene, camera);
+                house.rotation.z += 0.05;
             }
 
         }
